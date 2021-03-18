@@ -3,9 +3,8 @@ from pyspectator.processor import Cpu
 from time import sleep
 
 
-
 def generate_report(duration: timedelta):
-    cpu = Cpu(monitoring_latency=0.1)
+    cpu = Cpu(monitoring_latency=0.01)
 
     measurements = []
     with cpu:
@@ -15,6 +14,6 @@ def generate_report(duration: timedelta):
         while now < end_time:
             measurements.append((datetime.now(), cpu.load))
             now = datetime.now()
-            sleep(0.04)
+            sleep(0.02)
 
     return measurements
