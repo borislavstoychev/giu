@@ -14,6 +14,6 @@ server.login(gmail_username, gmail_pass)
 def send_mail(msg):
     msg['Subject'] = f'CPU reporter'
     msg['From'] = gmail_username
-    msg['To'] = "atanas.bozhanin@gmail.com"
-    server.sendmail(gmail_username, "atanas.bozhanin@gmail.com", msg.as_string())
+    msg['To'] = gmail_username
+    server.sendmail(gmail_username, gmail_username, msg.as_string())
 
